@@ -14,7 +14,7 @@ class StateCensusAnalyser:
     @staticmethod
     def check_no_of_record_from_file():
         """"Checks number of records in the file"""
-        with open("indian_census_data.csv") as my_file:
+        with open("E:\\pythonProject\\state_census\\indian_census_data.csv") as my_file:
             count = 0
             for i in my_file:
                 count += 1
@@ -23,7 +23,7 @@ class StateCensusAnalyser:
     @staticmethod
     def check_file_name(file_name):
         """"Checks for file name is invalid"""
-        with open("indian_census_data.csv") as my_file:
+        with open("E:\\pythonProject\\state_census\\indian_census_data.csv") as my_file:
             if my_file.name == file_name:
                 print("Valid file name")
             else:
@@ -50,7 +50,7 @@ class StateCensusAnalyser:
     @staticmethod
     def check_file_header(file_header):
         """"Check for file header is invalid"""
-        with open("indian_census_data.csv") as my_file:
+        with open("E:\\pythonProject\\state_census\\indian_census_data.csv") as my_file:
             for i in my_file:
                 if i.__contains__(file_header):
                     return True

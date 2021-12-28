@@ -3,13 +3,11 @@
 @date: 23-12-21 2:02 AM
 '''
 import pytest
-
 from state_code import CSVStates
 from state_code_exception import StateCodeException
 
 
 class TestIndianStateCode:
-
     @pytest.fixture
     def state(self):
         state = CSVStates()
@@ -20,12 +18,12 @@ class TestIndianStateCode:
 
     def test_check_file_name_is_invalid(self, state):
         with pytest.raises(StateCodeException) as exception:
-            state.check_state_code_file_name("indian_state_co.csv")
+            state.check_state_code_file_name("E:\\pythonProject\\state_census\\")
             assert exception.value.message == "Invalid file name"
 
     def test_check_file_extension_is_invalid(self, state):
         with pytest.raises(StateCodeException) as exception:
-            state.check_state_code_file_extension("indian_state_code_data.txt")
+            state.check_state_code_file_extension("E:\\pythonProject\\state_census\\indian_state_code_data.txt")
             assert exception.value.message == "Invalid file extension"
 
     def test_check_delimeter_is_invalid(self, state):
