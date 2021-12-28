@@ -15,7 +15,7 @@ class CSVStates:
     @staticmethod
     def check_state_code_no_of_record_from_file():
         """"Checks number of records in the file"""
-        with open("indian_state_code.csv") as my_file:
+        with open("E:\\pythonProject\\state_census\\indian_state_code.csv") as my_file:
             count = 0
             for i in my_file:
                 count += 1
@@ -24,7 +24,7 @@ class CSVStates:
     @staticmethod
     def check_state_code_file_name(file_name):
         """"Checks for file name is invalid"""
-        with open("indian_state_code.csv") as my_file:
+        with open("E:\\pythonProject\\state_census\\indian_state_code.csv") as my_file:
             if my_file.name == file_name:
                 print("Valid file name")
             else:
@@ -40,7 +40,11 @@ class CSVStates:
 
     @staticmethod
     def check_state_code_delimeter(file_name):
-        """"Check for file delimeter is invalid"""
+        '''
+
+        :param file_name:
+        :return:
+        '''
         sniffer = csv.Sniffer()
         dialect = sniffer.sniff(file_name)
         if  dialect.delimiter == ',':
@@ -50,8 +54,12 @@ class CSVStates:
 
     @staticmethod
     def check_state_code_file_header(file_header):
-        """"Check for file header is invalid"""
-        with open("indian_state_code.csv") as my_file:
+        '''
+        Check for file header is invalid
+        :param file_header: indian_state_co.csv
+        :return:
+        '''
+        with open("E:\\pythonProject\\state_census\\indian_state_code.csv") as my_file:
             for i in my_file:
                 if i.__contains__(file_header):
                     return True
